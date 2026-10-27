@@ -1,47 +1,60 @@
 const products = [
     {
         id: 1,
-        name: "LuncheonSilog",
-        category: "Silog Meal",
-        price: 70,
-        description: "Luncheon meat with garlic rice and fried egg."
+        name: "Chilimansi Pancit Canton",
+        category: "Pancit Canton",
+        price: 35,
+        description: "Chilimansi-flavored Pancit Canton."
     },
     {
         id: 2,
-        name: "Hatsilog",
-        category: "Silog Meal",
-        price: 60,
-        description: "Hotdog with garlic rice and fried egg."
+        name: "Sweet and Spicy Pancit Canton",
+        category: "Pancit Canton",
+        price: 35,
+        description: "Sweet and spicy-flavored Pancit Canton."
     },
-     {
+    {
         id: 3,
-        name: "Overload Cheese",
-        category: "Hotdog Sandwich",
-        price: 50,
-        description: "Original hotdog sandwich."
+        name: "Egg",
+        category: "Add-ons",
+        price: 15,
+        description: "Additional egg."
     },
     {
         id: 4,
-        name: "Overload Chicken with Cheese",
-        category: "Hotdog Sandwich",
-        price: 55,
-        description: "Chicken hotdog sandwich."
+        name: "Half Cup Rice",
+        category: "Add-ons",
+        price: 10,
+        description: "Half cup of rice."
     },
     {
         id: 5,
+        name: "Full Cup Rice",
+        category: "Add-ons",
+        price: 15,
+        description: "One full cup of rice."
+    },
+    {
+        id: 6,
+        name: "Cheese",
+        category: "Add-ons",
+        price: 10,
+        description: "Additional cheese."
+    },
+    {
+        id: 7,
         name: "Choco Drink 12 oz",
         category: "Drink",
         price: 10,
         description: "Chocolate drink, 12 oz."
     },
     {
-        id: 6,
+        id: 8,
         name: "Choco Drink 16 oz",
         category: "Drink",
         price: 15,
         description: "Chocolate drink, 16 oz."
-    },
-   
+    }
 ];
 
 
