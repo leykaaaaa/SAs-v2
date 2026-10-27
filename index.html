@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SAs Ordering</title>
+    <title>Hotel Sasylvania Ordering</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -18,12 +18,9 @@
 
             <div class="brand">
                 <h1>HOTEL SASYLVANIA</h1>
-                <p></p>
             </div>
 
-            <a href="sales.html" class="seller-link">
-                Seller
-            </a>
+            <a href="sales.html" class="seller-link">Seller</a>
 
         </header>
 
@@ -31,53 +28,37 @@
         <!-- WELCOME -->
         <section class="welcome">
 
-            <p class="small-label">
-                WELCOME
-            </p>
+            <p class="small-label">WELCOME</p>
 
-            <h2>
-                What would you like to order?
-            </h2>
+            <h2>What would you like to order?</h2>
 
-            <p>
-                Choose your meal and adjust the quantity below.
-            </p>
+            <p>Choose your meal and adjust the quantity below.</p>
 
         </section>
 
 
-        <!-- SILOG MEALS -->
+        <!-- PANCIT CANTON -->
         <section class="menu-section">
 
             <div class="section-heading">
-
-                <span>
-                    SILOG MEALS
-                </span>
-
-                <h2>
-                    Filipino Favorites
-                </h2>
-
+                <span>PANCIT CANTON</span>
+                <h2>Pick Your Flavor</h2>
             </div>
 
-
-            <div
-                id="silogProducts"
-                class="product-grid"
-            ></div>
+            <div id="pancitProducts" class="product-grid"></div>
 
         </section>
 
-          <!-- HOTDOG SANDWICH -->
+
+        <!-- ADD-ONS -->
         <section class="menu-section">
 
             <div class="section-heading">
-                <span>HOTDOG SANDWICH</span>
-                <h2>Sandwich Favorites</h2>
+                <span>ADD-ONS</span>
+                <h2>Make It a Meal</h2>
             </div>
 
-            <div id="sandwichProducts" class="product-grid"></div>
+            <div id="addonProducts" class="product-grid"></div>
 
         </section>
 
@@ -86,22 +67,11 @@
         <section class="menu-section">
 
             <div class="section-heading">
-
-                <span>
-                    DRINKS
-                </span>
-
-                <h2>
-                    Refreshing Drinks
-                </h2>
-
+                <span>DRINKS</span>
+                <h2>Refreshing Drinks</h2>
             </div>
 
-
-            <div
-                id="drinkProducts"
-                class="product-grid"
-            ></div>
+            <div id="drinkProducts" class="product-grid"></div>
 
         </section>
 
@@ -112,42 +82,23 @@
             <div class="summary-header">
 
                 <div>
-                    <span class="small-label">
-                        YOUR ORDER
-                    </span>
-
-                    <h2>
-                        Order Summary
-                    </h2>
+                    <span class="small-label">YOUR ORDER</span>
+                    <h2>Order Summary</h2>
                 </div>
 
-                <button
-                    id="clearButton"
-                    class="clear-button"
-                >
+                <button type="button" id="clearButton" class="clear-button">
                     Clear
                 </button>
 
             </div>
 
 
-            <div
-                id="cartItems"
-                class="cart-items"
-            >
+            <div id="cartItems" class="cart-items">
 
                 <div class="empty-cart">
-                    <div class="empty-icon">
-                        
-                    </div>
-
-                    <p>
-                        Your order is empty.
-                    </p>
-
-                    <small>
-                        Select an item above to get started.
-                    </small>
+                    <div class="empty-icon">🛒</div>
+                    <p>Your order is empty.</p>
+                    <small>Select an item above to get started.</small>
                 </div>
 
             </div>
@@ -156,22 +107,11 @@
             <div class="summary-bottom">
 
                 <div class="total-line">
-
-                    <span>
-                        Total
-                    </span>
-
-                    <strong id="totalPrice">
-                        ₱0.00
-                    </strong>
-
+                    <span>Total</span>
+                    <strong id="totalPrice">₱0.00</strong>
                 </div>
 
-
-                <button
-                    id="submitOrder"
-                    class="submit-button"
-                >
+                <button type="button" id="submitOrder" class="submit-button">
                     SUBMIT ORDER
                 </button>
 
@@ -184,55 +124,35 @@
         <div
             id="successModal"
             class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="successTitle"
         >
 
             <div class="success-box">
 
-                <div class="success-icon">
-                    
-                </div>
+                <div class="success-icon">✅</div>
 
-                <p class="small-label">
-                    ORDER SUBMITTED
-                </p>
+                <p class="small-label">ORDER SUBMITTED</p>
 
-                <h2>
-                    Thank you!
-                </h2>
+                <h2 id="successTitle">Thank you!</h2>
 
-                <p>
-                    Your order has been recorded.
-                </p>
+                <p>Your order has been recorded.</p>
 
                 <div class="order-number-box">
-
-                    <span>
-                        ORDER NUMBER
-                    </span>
-
-                    <strong id="orderNumber">
-                        #001
-                    </strong>
-
+                    <span>ORDER NUMBER</span>
+                    <strong id="orderNumber">#001</strong>
                 </div>
 
                 <div class="success-total">
-
-                    Total:
-                    <strong id="successTotal">
-                        ₱0.00
-                    </strong>
-
+                    Total: <strong id="successTotal">₱0.00</strong>
                 </div>
 
                 <p class="return-message">
                     Please return this device to the seller.
                 </p>
 
-                <button
-                    id="doneButton"
-                    class="submit-button"
-                >
+                <button type="button" id="doneButton" class="submit-button">
                     DONE
                 </button>
 
@@ -247,4 +167,4 @@
     <script src="js/order.js"></script>
 
 </body>
-                               </html>
+</html>
