@@ -1,1 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SAs | Seller</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css?v=3"
+    >
+</head>
+
+<body>
+
+<main class="sales-page">
+
+    <!-- HEADER -->
+
+    <header class="sales-header">
+
+        <div>
+
+            <a
+                href="index.html"
+                class="back-link"
+            >
+                ← Back to Menu
+            </a>
+
+            <h1>
+                Seller Dashboard
+            </h1>
+
+            <p>
+                Manage orders and monitor your sales.
+            </p>
+
+        </div>
+
+        <button
+            id="resetSales"
+            class="reset-button"
+        >
+            Reset Sales
+        </button>
+
+    </header>
+
+
+    <!-- STATISTICS -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+
+            <span>
+                TODAY'S SALES
+            </span>
+
+            <strong id="totalSales">
+                ₱0.00
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                PENDING ORDERS
+            </span>
+
+            <strong id="pendingOrders">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                COMPLETED ORDERS
+            </span>
+
+            <strong id="completedOrders">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                CANCELLED ORDERS
+            </span>
+
+            <strong id="cancelledOrders">
+                0
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ORDER STATUS FILTER -->
+
+    <section class="report-card">
+
+        <div class="report-heading">
+
+            <div>
+
+                <span class="small-label">
+                    ORDER MANAGEMENT
+                </span>
+
+                <h2>
+                    Customer Orders
+                </h2>
+
+            </div>
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    All Orders
+                </option>
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="completed">
+                    Completed
+                </option>
+
+                <option value="cancelled">
+                    Cancelled
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div
+            id="ordersContainer"
+            class="orders-container"
+        ></div>
+
+    </section>
+
+
+    <!-- PRODUCT SALES -->
+
+    <section class="report-card">
+
+        <div class="report-heading">
+
+            <div>
+
+                <span class="small-label">
+                    SALES BREAKDOWN
+                </span>
+
+                <h2>
+                    Items Sold
+                </h2>
+
+            </div>
+
+            <select id="salesFilter">
+
+                <option value="today">
+                    Today
+                </option>
+
+                <option value="all">
+                    All Time
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            PRODUCT
+                        </th>
+
+                        <th>
+                            QUANTITY SOLD
+                        </th>
+
+                        <th>
+                            REVENUE
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="salesTable"></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- RECEIPT PREVIEW -->
+
+<div
+    id="receiptModal"
+    class="modal"
+>
+
+    <div class="receipt-box">
+
+        <div class="receipt-toolbar">
+
+            <div>
+
+                <span class="small-label">
+                    ORDER RECEIPT
+                </span>
+
+                <h2 id="receiptTitle">
+                    #001
+                </h2>
+
+            </div>
+
+            <button
+                id="closeReceipt"
+                class="receipt-close"
+                aria-label="Close receipt"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div class="receipt-preview">
+
+            <img
+                id="receiptImage"
+                alt="Order receipt"
+            >
+
+        </div>
+
+
+        <div class="receipt-actions">
+
+            <button
+                id="downloadReceipt"
+                class="submit-button"
+            >
+                DOWNLOAD
+            </button>
+
+            <button
+                id="printReceipt"
+                class="receipt-secondary"
+            >
+                PRINT
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/data.js"></script>
+<script src="js/receipt.js"></script>
+<script src="js/sales.js"></script>
+
+</body>
+  </html>
