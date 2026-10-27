@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SAs Ordering</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="order-page">
+
+        <!-- HEADER -->
+        <header class="store-header">
+
+            <div class="brand">
+                <h1>HOTEL SASYLVANIA</h1>
+                <p></p>
+            </div>
+
+            <a href="sales.html" class="seller-link">
+                Seller
+            </a>
+
+        </header>
+
+
+        <!-- WELCOME -->
+        <section class="welcome">
+
+            <p class="small-label">
+                WELCOME
+            </p>
+
+            <h2>
+                What would you like to order?
+            </h2>
+
+            <p>
+                Choose your meal and adjust the quantity below.
+            </p>
+
+        </section>
+
+
+        <!-- SILOG MEALS -->
+        <section class="menu-section">
+
+            <div class="section-heading">
+
+                <span>
+                    SILOG MEALS
+                </span>
+
+                <h2>
+                    Filipino Favorites
+                </h2>
+
+            </div>
+
+
+            <div
+                id="silogProducts"
+                class="product-grid"
+            ></div>
+
+        </section>
+
+          <!-- HOTDOG SANDWICH -->
+        <section class="menu-section">
+
+            <div class="section-heading">
+                <span>HOTDOG SANDWICH</span>
+                <h2>Sandwich Favorites</h2>
+            </div>
+
+            <div id="sandwichProducts" class="product-grid"></div>
+
+        </section>
+
+
+        <!-- DRINKS -->
+        <section class="menu-section">
+
+            <div class="section-heading">
+
+                <span>
+                    DRINKS
+                </span>
+
+                <h2>
+                    Refreshing Drinks
+                </h2>
+
+            </div>
+
+
+            <div
+                id="drinkProducts"
+                class="product-grid"
+            ></div>
+
+        </section>
+
+
+        <!-- ORDER SUMMARY -->
+        <section class="order-summary">
+
+            <div class="summary-header">
+
+                <div>
+                    <span class="small-label">
+                        YOUR ORDER
+                    </span>
+
+                    <h2>
+                        Order Summary
+                    </h2>
+                </div>
+
+                <button
+                    id="clearButton"
+                    class="clear-button"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div
+                id="cartItems"
+                class="cart-items"
+            >
+
+                <div class="empty-cart">
+                    <div class="empty-icon">
+                        
+                    </div>
+
+                    <p>
+                        Your order is empty.
+                    </p>
+
+                    <small>
+                        Select an item above to get started.
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-bottom">
+
+                <div class="total-line">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="totalPrice">
+                        ₱0.00
+                    </strong>
+
+                </div>
+
+
+                <button
+                    id="submitOrder"
+                    class="submit-button"
+                >
+                    SUBMIT ORDER
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDER SUCCESS MODAL -->
+        <div
+            id="successModal"
+            class="modal"
+        >
+
+            <div class="success-box">
+
+                <div class="success-icon">
+                    
+                </div>
+
+                <p class="small-label">
+                    ORDER SUBMITTED
+                </p>
+
+                <h2>
+                    Thank you!
+                </h2>
+
+                <p>
+                    Your order has been recorded.
+                </p>
+
+                <div class="order-number-box">
+
+                    <span>
+                        ORDER NUMBER
+                    </span>
+
+                    <strong id="orderNumber">
+                        #001
+                    </strong>
+
+                </div>
+
+                <div class="success-total">
+
+                    Total:
+                    <strong id="successTotal">
+                        ₱0.00
+                    </strong>
+
+                </div>
+
+                <p class="return-message">
+                    Please return this device to the seller.
+                </p>
+
+                <button
+                    id="doneButton"
+                    class="submit-button"
+                >
+                    DONE
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/data.js"></script>
+    <script src="js/order.js"></script>
+
+</body>
+                               </html>
