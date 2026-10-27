@@ -1,11 +1,59 @@
+/* =========================
+   FALLBACK HELPERS
+   Your old file used getOrders, saveOrders, formatPeso and
+   getNextOrderNumber, but index.html never loaded a file that
+   defines them. These are only used if nothing else does.
+========================= */
+
+const ORDERS_KEY = "silogOrders";
+
+if (typeof getOrders !== "function") {
+    window.getOrders = function () {
+        try {
+            const data = JSON.parse(localStorage.getItem(ORDERS_KEY));
+            return Array.isArray(data) ? data : [];
+        } catch (e) {
+            return [];
+        }
+    };
+}
+
+if (typeof saveOrders !== "function") {
+    window.saveOrders = function (orders) {
+        localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+    };
+}
+
+if (typeof getNextOrderNumber !== "function") {
+    window.getNextOrderNumber = function () {
+        return getOrders().reduce(
+            (max, order) => Math.max(max, Number(order.id) || 0), 0
+        ) + 1;
+    };
+}
+
+if (typeof formatPeso !== "function") {
+    window.formatPeso = function (amount) {
+        return "₱" + Number(amount || 0).toLocaleString("en-PH", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    };
+}
+
+
+/* =========================
+   ELEMENTS
+========================= */
 
 let cart = [];
 
-const silogProducts = document.getElementById("silogProducts");
-const sandwichProducts = document.getElementById("sandwichProducts");
-const drinkProducts = document.getElementById("drinkProducts");
+/* Containers in index.html */
+const pancitProducts = document.getElementById("pancitProducts");
+const addonProducts  = document.getElementById("addonProducts");
+const drinkProducts  = document.getElementById("drinkProducts");
 
-const cartItems = document.getElementById("cartItems");
+const cartItems  = document.getElementById("cartItems");
 const totalPrice = document.getElementById("totalPrice");
 
 
@@ -15,8 +63,13 @@ const totalPrice = document.getElementById("totalPrice");
 
 function displayProducts() {
 
-    silogProducts.innerHTML = "";
-    sandwichProducts.innerHTML = "";
+    if (typeof products === "undefined") {
+        console.error("`products` is not defined. Check that js/data.js loads first and has no syntax errors (it must start with: const products = [ ).");
+        return;
+    }
+
+    pancitProducts.innerHTML = "";
+    addonProducts.innerHTML = "";
     drinkProducts.innerHTML = "";
 
     products.forEach(product => {
@@ -43,30 +96,35 @@ function displayProducts() {
 
             <div class="quantity-box">
 
-                <button onclick="decreaseItem(${product.id})">
+                <button type="button" onclick="decreaseItem(${product.id})">
                     −
                 </button>
 
                 <span id="quantity-${product.id}">0</span>
 
-                <button onclick="increaseItem(${product.id})">
+                <button type="button" onclick="increaseItem(${product.id})">
                     +
                 </button>
 
             </div>
         `;
 
-        if (product.category === "Silog Meal") {
+        /* Categories now match data.js exactly */
+        if (product.category === "Pancit Canton") {
 
-            silogProducts.appendChild(card);
+            pancitProducts.appendChild(card);
 
-        } else if (product.category === "Hotdog Sandwich") {
+        } else if (product.category === "Add-ons") {
 
-            sandwichProducts.appendChild(card);
+            addonProducts.appendChild(card);
 
         } else if (product.category === "Drink") {
 
             drinkProducts.appendChild(card);
+
+        } else {
+
+            console.warn(`Unknown category "${product.category}" for "${product.name}"`);
 
         }
 
@@ -167,7 +225,7 @@ function displayCart() {
         cartItems.innerHTML = `
             <div class="empty-cart">
 
-                <div class="empty-icon"></div>
+                <div class="empty-icon">🛒</div>
 
                 <p>Your order is empty.</p>
 
@@ -178,7 +236,7 @@ function displayCart() {
             </div>
         `;
 
-        totalPrice.textContent = "₱0.00";
+        totalPrice.textContent = formatPeso(0);
         return;
 
     }
